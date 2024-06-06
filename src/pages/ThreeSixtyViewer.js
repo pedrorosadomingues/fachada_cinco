@@ -49,7 +49,7 @@ const ThreeSixtyViewer = () => {
       scene.add(mesh);
     });
 
-    camera.position.set(0, 0, 400);
+    camera.position.set(0, 0, 650);
 
     const animate = () => {
       requestAnimationFrame(animate);
