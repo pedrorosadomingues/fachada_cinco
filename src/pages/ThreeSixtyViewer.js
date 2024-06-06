@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const ThreeSixtyViewer = () => {
   const mountRef = useRef(null);
@@ -36,12 +36,16 @@ const ThreeSixtyViewer = () => {
     geometry.scale(-1, 1, 1);
 
     const textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/Fachada_cinco.jpg', (texture) => {
+    textureLoader.load("/Fachada_cinco.jpg", (texture) => {
       // texture.encoding = THREE.sRGBEncoding; // Garantir a correção de cor da textura
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
       const material = new THREE.MeshBasicMaterial({ map: texture });
       const mesh = new THREE.Mesh(geometry, material);
+
+      // Ajustar a rotação inicial da imagem
+      mesh.rotation.y = THREE.MathUtils.degToRad(-60);
+
       scene.add(mesh);
     });
 
@@ -62,15 +66,15 @@ const ThreeSixtyViewer = () => {
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       mountRef.current.removeChild(renderer.domElement);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  return <div ref={mountRef} style={{ width: '100vw', height: '100vh' }} />;
+  return <div ref={mountRef} style={{ width: "100vw", height: "100vh" }} />;
 };
 
 export default ThreeSixtyViewer;
