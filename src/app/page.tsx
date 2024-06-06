@@ -16,7 +16,7 @@ export default function Home() {
         alt="Fullscreen-icon"
         width={70}
         height={48}
-        className="fixed bottom-0 right-0 p-4 cursor-pointer"
+        className="fixed bottom-0 right-0 cursor-pointer"
         onClick={handleClick}
       />
     </main>
