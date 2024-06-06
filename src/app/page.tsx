@@ -1,10 +1,24 @@
+"use client";
+
 import React from "react";
 import ThreeSixtyViewer from "../pages/ThreeSixtyViewer";
+import Image from "next/image";
 
 export default function Home() {
+  function handleClick() {
+    window.open("https://fachada-cinco.vercel.app");
+  }
   return (
-    <main className="flex items-center justfy-center">  
-        <ThreeSixtyViewer />
+    <main className="flex items-center justfy-center relative">
+      <ThreeSixtyViewer />
+      <Image
+        src="/fullscreen.svg"
+        alt="Fullscreen-icon"
+        width={70}
+        height={48}
+        className="fixed bottom-0 right-0 p-4 cursor-pointer"
+        onClick={handleClick}
+      />
     </main>
   );
 }
