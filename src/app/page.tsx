@@ -14,7 +14,7 @@ export default function Home() {
       <Image
         src="/fullscreen.svg"
         alt="Fullscreen-icon"
-        width={70}
+        width={50}
         height={48}
         className="fixed bottom-0 right-0 cursor-pointer"
         onClick={handleClick}
