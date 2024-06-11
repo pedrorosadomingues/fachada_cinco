@@ -5,7 +5,9 @@ import ThreeSixtyViewer from "../pages/ThreeSixtyViewer";
 import Image from "next/image";
 
 export default function Home() {
-  function handleClick() {
+
+  function handleClick(event: any) {
+    event.preventDefault();
     window.location.href = "https://fachada-cinco.vercel.app";
   }
   return (
