@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   function handleClick() {
-    window.open("https://fachada-cinco.vercel.app");
+    window.location.href = "https://fachada-cinco.vercel.app";
   }
   return (
     <main className="flex items-center justfy-center relative">
