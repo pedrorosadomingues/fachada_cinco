@@ -5,10 +5,8 @@ import ThreeSixtyViewer from "../pages/ThreeSixtyViewer";
 import Image from "next/image";
 
 export default function Home() {
-
-  function handleClick(event: any) {
-    event.preventDefault();
-    window.location.href = "https://fachada-cinco.vercel.app";
+  function handleClick() {
+    window.open("https://fachada-cinco.vercel.app");
   }
   return (
     <main className="flex items-center justfy-center relative">
